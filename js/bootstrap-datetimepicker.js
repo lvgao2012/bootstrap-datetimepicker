@@ -1582,6 +1582,10 @@
         dateUTC.setMilliseconds(0);
         return dateUTC;
       }
+	  if(/^\d{4}\d{1,2}\d{1,2}$/.test(date)){
+		date = date.replace(/^(\d{4})(\d{1,2})(\d{1,2})$/,'$1-$2-$3');
+        format = this.parseFormat('yyyymmdd', type);
+	  }
       if (/^\d{4}\-\d{1,2}\-\d{1,2}$/.test(date)) {
         format = this.parseFormat('yyyy-mm-dd', type);
       }
